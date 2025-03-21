@@ -1,0 +1,51 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Noto+Sans+KR&family=Questrial&display=swap');
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+@font-face {
+    font-family: 'aeonik';
+    src: url(fonts/Aeonik-Regular.otf);
+}
+@font-face {
+    font-family: 'aeonik bold';
+    src: url(fonts/Aeonik-Bold.otf);
+}
+
+
+body{font-size: 16px; line-height: 1.6; background: #f8f8f4; font-family: 'aeonik'; font-weight: bolder;}
+.wrap{width: 100%; margin: 0 auto; overflow: hidden; position: relative;}
+
+.loader{background-color: black; position: absolute; height: 100vh; width: 100vw; z-index: 99; display: flex; align-items: center; justify-content: center; transition: all 0.4s ease;}
+.loader span{font-family:'aeonik bold'; display: inline-block; color: #fff; font-size: 7rem; font-weight: lighter; line-height: 1.5; transition: transform 0.3s ease; position: relative;}
+.loader #r {transform: translateX(80%);}
+.loader #a {transform: translateX(0); opacity: 0;}
+.loader #x {transform: translateX(0);}
+.loader #o {transform: translateX(0); opacity: 0;}
+.loader #dot {transform: translate(-220%,0);vertical-align: baseline; display: inline-block;} 
+
+
+.header{width: 100%; height: 11vh; padding:0.1vw 2vw; display: flex; justify-content: space-between; padding-top: 20px; box-sizing: border-box;}
+.header .logo{font-size: 1.9rem; letter-spacing: 1.5px; line-height: 1.5;  padding-top: .5vw;}
+.header .logo a .r{font-size: 1.9rem;}
+.header .contactUs{width: 10%; margin-right: 4vw; text-align: center; padding-top: 1.3vw; font-weight: bolder; font-size: 1.1rem;}
+
+.header .menu{display: flex;  padding-top: 12px; font-size: 1.1rem;}
+.header .menu .menu-text{margin-right: 15vw; line-height: 1.1;}
+.header .menu .menu-list{margin-right: 13vw; line-height: 1.1;}
+.header ul li .header-list{width: 100%;display: flex; flex-direction: column;}
+
+.visual {width: 100%; height: 89vh; position: relative;}
+.visual .inner{height:100%; position: relative;}
+.visual .inner .intro{ font-size: 12rem; position: absolute;left: 2%; bottom: 2%; letter-spacing: -25px; line-height: 1; font-weight: 600;}
+.visual .inner .scroll {position: absolute; bottom: 3%; right: 3%; font-size: 2rem;}
