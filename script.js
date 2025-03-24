@@ -19,7 +19,7 @@ function loader(){
         ease: "power2.out"
     });
     tl.to(".loader #dot", {
-        y: 10,
+        y: 50,
         duration: 0.3,
         ease: "power2.in"
     });
@@ -55,6 +55,25 @@ function loader(){
 
     tl.to('.loader',{duration :0.5, opacity: 0, display : 'none'})
     tl.from('.page1 .inner-content span',{ y:60, duration :.5, delay:-.3, stagger :.0 })
+
+    const cursor = document.querySelector(".cursor"); 
+}
+
+
+function crsrAnim(){
+    const cursor = document.querySelector('.cursor');
+    const innerContent = document.querySelector('.wrap');
+    innerContent.addEventListener('mousemove', (e)=>{
+        gsap.to(cursor,{ x:e.x+'px', y:e.y+'px'})
+    })
+
+    innerContent.addEventListener('mouseenter',()=>{
+        gsap.to(cursor,{scale : 1,opacity :1})
+    })
+
+    innerContent.addEventListener('mouseleave',()=>{
+        gsap.to(cursor,{scale:0,opacity:0})
+    })
 }
 
 function loco(){
@@ -82,7 +101,38 @@ function loco(){
     ScrollTrigger.refresh();
 }
 
+function visualAnim(){
+    gsap.timeline({
+        scrollTrigger:{
+            trigger:'.visual',
+            start : '50% 55%',
+            end : '100% 0%',
+            scrub : 1,
+            //markers:true
+        }
+    })
+    .to('.intro #C',{x:'50', 'y':'1450', rotate: '40', ease: 'none', duration:7},0.1)
+    .to('.intro #r',{x:'45', 'y':'1120', rotate: '-50', ease: 'none', duration:6},0.5)
+    .to('.intro #e',{x:'60', 'y':'1350', rotate: '-50', ease: 'none', duration:5},0.3)
+    .to('.intro #a',{x:'50', 'y':'1350', rotate: '-30', ease: 'none', duration:7},0.2)
+    .to('.intro #t',{x:'30', 'y':'1250', rotate: '-30', ease: 'none', duration:7},0)
+    .to('.intro #i',{x:'100', 'y':'1100', rotate: '-80', ease: 'none', duration:6},0.1)
+    .to('.intro #v',{x:'50', 'y':'1450', rotate: '-50', ease: 'none', duration:6},0.4)
+    .to('.intro #i2',{x:'10', 'y':'1120', rotate: '-20', ease: 'none', duration:5},0.5)
+    .to('.intro #t2',{x:'40', 'y':'1350', rotate: '-70', ease: 'none', duration:7},0.2)
+    .to('.intro #y',{x:'50', 'y':'1350', rotate: '40', ease: 'none', duration:7},0.3)
+    .to('.intro #i3',{x:'10', 'y':'1120', rotate: '-20', ease: 'none', duration:5},0.5)
+    .to('.intro #s',{x:'100', 'y':'1100', rotate: '-80', ease: 'none', duration:6},0.1)
+    .to('.intro #o',{x:'50', 'y':'1450', rotate: '-50', ease: 'none', duration:6},0.4)
+    .to('.intro #u',{x:'10', 'y':'1120', rotate: '-20', ease: 'none', duration:5},0.5)
+    .to('.intro #r',{x:'50', 'y':'1350', rotate: '-30', ease: 'none', duration:7},0.2)
+    .to('.intro #c',{x:'50', 'y':'1450', rotate: '40', ease: 'none', duration:7},0.1)
+    .to('.intro #f',{x:'60', 'y':'1350', rotate: '-50', ease: 'none', duration:5},0.3)
+}
+
 window.onload = function(){
+    crsrAnim();
     loco();
     loader();
+    visualAnim();
 };
