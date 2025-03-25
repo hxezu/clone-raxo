@@ -27,7 +27,7 @@ body{font-size: 16px; line-height: 1.6; background: #fff; font-family: 'aeonik';
 .wrap{width: 100%; margin: 0 auto; overflow: hidden; color: black;}
 .cursor{width: 2vw; height: 2vw; background-color:white; border-radius: 50%; position: absolute;  transform: translate(-50%, -50%); z-index: 9990; mix-blend-mode: difference; pointer-events: none;}
 
-.loader{background-color: black; position: absolute; height: 100vh; width: 100vw; z-index: 99; display: flex; align-items: center; justify-content: center; transition: all 0.4s ease;}
+.loader{background-color: black; position: fixed; height: 100vh; width: 100vw; z-index: 10000; display: flex; align-items: center; justify-content: center; transition: all 0.4s ease;}
 .loader span{font-family:'aeonik bold'; display: inline-block; color: #fff; font-size: 7rem; font-weight: lighter; line-height: 1.5; transition: transform 0.3s ease; position: relative;}
 .loader #r {transform: translateX(80%);}
 .loader #a {transform: translateX(0); opacity: 0;}
@@ -36,22 +36,33 @@ body{font-size: 16px; line-height: 1.6; background: #fff; font-family: 'aeonik';
 .loader #dot {transform: translate(-220%,0);vertical-align: baseline; display: inline-block;} 
 
 
-.header{width: 100%; height: 11vh; padding:0.1vw 2vw; display: flex; justify-content: space-between; padding-top: 20px; box-sizing: border-box; position: relative; }
+.header{width: 100%; height: 11vh; padding:0.1vw 2vw; display: none; justify-content: space-between; padding-top: 20px; box-sizing: border-box; position: fixed; top: 0; left: 0; z-index: 10; background: rgba(255, 255, 255,0.8); backdrop-filter: blur(20px); padding-bottom: 5%;}
 .header .logo{font-size: 1.9rem; letter-spacing: 1.5px; line-height: 1.5;  padding-top: .5vw;}
 .header .logo a .r{font-size: 1.9rem;}
-.header .contactUs{width: 10%; margin-right: 4vw; text-align: center; padding-top: 1.3vw; font-weight: bolder; font-size: 1.1rem;}
+.header .contactWrapper{width: 10%; font-weight: bolder; font-size: 1.1rem; display: flex; position: relative; padding-top: 10px;}
+.header .contactWrapper span{width: 10%; position: absolute; margin-left: 5px;}
+.header .contactWrapper span img{width: 100%; transform: rotate(270deg); position: absolute; margin-top: 5px}
+.header .contactWrapper:hover span img{width: 100%; transform: rotate(270deg) translate(2px, 2px); position: absolute; transition: transform 0.4s ease-in-out;}
 
 .header .menu{display: flex;  padding-top: 12px; font-size: 1.1rem;}
 .header .menu .menu-text{margin-right: 15vw; line-height: 1.1;}
 .header .menu .menu-list{margin-right: 13vw; line-height: 1.1;}
 .header ul li .header-list{width: 100%;display: flex; flex-direction: column;}
+.header .header-list li{position: relative;}
+.header .header-list li::after{content: ''; position: absolute; height: 2px; width: 100%; bottom: 0; left: 0; background: #000; transform: scaleX(0); transform-origin: bottom right; transition: transform .35s ease-out;}
+.header .header-list li:hover::after{transform: scaleX(1); transform-origin: bottom left;}
 
-.visual {width: 100%; height: 89vh; position: relative;}
+
+.visual {width: 100%; height: 100vh; position: relative;}
 .visual .inner{height:100%; position: relative;}
-.visual .inner .intro{ font-size: 12rem; position: absolute;left: 2%; bottom: 2%; letter-spacing: -25px; line-height: 1; font-weight: 600;}
+.visual .inner .intro{ font-size: 12.8rem; position: absolute;left: 2%; bottom: 2%; letter-spacing: -25px; line-height: 1; font-weight: 600;}
 .visual .inner .intro span {display: inline-block; position: relative;}
-.visual .inner .scroll {position: absolute; bottom: 3%; right: 3%; font-size: 2rem;}
+.visual .inner .scrollWrapper {position: absolute; bottom: 3%; right: 5%; }
+.visual .inner .scrollWrapper .scroll{font-size: 2rem; }
+.visual .inner .scrollWrapper span{position: absolute; width: 25%; margin-left: 9px;}
+.visual .inner .scrollWrapper span img{width: 100%;}
+.visual .inner .scrollWrapper:hover span img{transform: translate(2px, 2px); transition: transform 0.4s ease-in-out;}
 
-.reel {width: 100%; height: 100vh;}
+.reel {width: 100%; height: 100vh; margin-top: 50px;}
 .reel .reel-wrapper{height: 100%; position: relative; display: flex; justify-content: center; align-items: center;}
-.reel .reel-wrapper video{width: 90%;}
+.reel .reel-wrapper video{width: 90%; height: 100%;}

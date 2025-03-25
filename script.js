@@ -54,9 +54,8 @@ function loader(){
     }, "<"); 
 
     tl.to('.loader',{duration :0.5, opacity: 0, display : 'none'})
+    tl.to('.header',{duration :0.5, opacity: 1, display : 'flex'})
     tl.from('.page1 .inner-content span',{ y:60, duration :.5, delay:-.3, stagger :.0 })
-
-    const cursor = document.querySelector(".cursor"); 
 }
 
 
@@ -105,7 +104,7 @@ function visualAnim(){
     gsap.timeline({
         scrollTrigger:{
             trigger:'.visual',
-            start : '50% 55%',
+            start : '45% 40%',
             end : '100% 0%',
             scrub : 1,
             //markers:true
