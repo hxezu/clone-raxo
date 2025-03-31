@@ -3,12 +3,12 @@ function loader(){
     
     // 1. "."이 통통 튀는 애니메이션
     tl.to(".loader #dot", {
-        y: -80, // span 크기만큼 위로 (112px)
+        y: -70, // span 크기만큼 위로 (112px)
         duration: 0.3,
         ease: "power2.out"
     });
     tl.to(".loader #dot", {
-        y: 160, // 바닥으로 내려옴
+        y: 140, // 바닥으로 내려옴
         duration: 0.3,
         ease: "power2.in"
     });
@@ -19,7 +19,7 @@ function loader(){
         ease: "power2.out"
     });
     tl.to(".loader #dot", {
-        y: 50,
+        y: 0,
         duration: 0.3,
         ease: "power2.in"
     });
@@ -118,7 +118,7 @@ function visualAnim(){
     .to('.intro #r',{x:'45', 'y':'620', rotate: '-50', ease: 'none', duration:4},0.5)
     .to('.intro #e',{x:'60', 'y':'650', rotate: '-50', ease: 'none', duration:4},0.3)
     .to('.intro #a',{x:'50', 'y':'730', rotate: '-30', ease: 'none', duration:3},0.2)
-    .to('.intro #t',{x:'30', 'y':'490', rotate: '-30', ease: 'none', duration:6},0)
+    .to('.intro #t',{x:'30', 'y':'590', rotate: '-30', ease: 'none', duration:6},0)
     .to('.intro #i',{x:'100', 'y':'750', rotate: '-80', ease: 'none', duration:3},0.1)
     .to('.intro #v',{x:'50', 'y':'790', rotate: '-50', ease: 'none', duration:2},0.4)
     .to('.intro #i2',{x:'10', 'y':'520', rotate: '-20', ease: 'none', duration:5},0.5)
